@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  # get a specific persons profile
+  get 'profiles/:id' => "profiles#show", as: :profile
+  get 'profiles' => "profiles#index"
 
-  get 'profiles/index'
-
-  get 'profiles/show'
 
   root 'tweets#index'
   resources :tweets
