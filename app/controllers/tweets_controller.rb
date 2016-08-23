@@ -2,10 +2,11 @@ class TweetsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    @tweets = Tweet.all
   end
 
   def show
-    @tweet = Tweet.new
+    @tweet = Tweet.find(params[:id])
   end
 
   def edit
@@ -22,9 +23,14 @@ class TweetsController < ApplicationController
         format.html{redirect_to @tweet, notice: "Tweet saved"}
       else
         format.html{render (:new)}
-
       end
     end
+  end
+
+  private 
+
+  def tweet_params 
+    params.require(:tweet).permit(:message, :user_id)
   end
 
 end
