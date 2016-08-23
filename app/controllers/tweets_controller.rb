@@ -5,6 +5,7 @@ class TweetsController < ApplicationController
   end
 
   def show
+    @tweet = Tweet.new
   end
 
   def edit
@@ -21,7 +22,7 @@ class TweetsController < ApplicationController
         format.html{redirect_to @tweet, notice: "Tweet saved"}
       else
         format.html{render (:new)}
-        
+
       end
     end
   end
