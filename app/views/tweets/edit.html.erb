@@ -1,2 +1,6 @@
-<h1>Edit Page</h1>
+<h1> Editing Tweet</h1>
+<%= render 'form' %>
+<!-- @tweet comes from our before action in the controller -->
+<%= link_to "Show this Tweet", @tweet, class: "btn btn-sm btn-default" %>
+<%= link_to "See All The Tweets", tweets_path, class: "btn btn-sm btn-default" %>
 
