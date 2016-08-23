@@ -1,2 +1,30 @@
-<h1>Tweets#new</h1>
-<p>Find me in app/views/tweets/new.html.erb</p>
+<h1>New: Not A Tweet</h1>
+<%= form_for(@tweet) do |f| %>
+<!-- Check for errors and show us -->
+  <% if @tweet.errors.any? %>
+  <div id="error_explanation">
+    <h2><%=pluralize(@tweet.error.count, "error") %> prohibited this tweet from being saved:
+    </h2>
+    <!-- This list through the errors and list them for us -->
+      <ol>
+        <%@tweet.errors.full_messages.each do |error|  %>
+          <li><%= error %></li>
+        <% end %>
+      </ol>
+    </div>
+  <% end %>
+  <!-- **************** -->
+  <!-- Actual Form      -->
+  <!-- *****************-->
+  <div class="field form-group">
+    <%= f.label :message %><br>
+    <%= f.text_field :message, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+  <div class="action form-group"><br>
+    <%= f.submit class: "btn btn-success"  %>
+  </div>
+<% end %>
