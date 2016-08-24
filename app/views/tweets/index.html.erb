@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p> 
+<!-- Jumbotron -->
+<div class="jumbotron">
+  <h1>Welcome to Definitely Not Twitter</h1>
+  <p>Whats Happening</p>
+ 
+</div>
 
 <h1>All Tweets</h1>
 <%= link_to "New Tweet", new_tweet_path, class: "btn btn-md btn-success" %>
@@ -19,23 +25,22 @@
         <td><%= link_to "Destroy", tweet, method: :delete, data: {confirm: "Are you suere?"}, class: "btn btn-xs btn-danger" %></td>
       </tr>
       <% end %>
-      
-
-
-
     </tbody>
-
-
-
   </thead>
-  
-
-
-
-
-
-
-
-
-
 </table>
+
+<!-- I need to loop this so that people add there own stuff -->
+<!-- Custom Content with Thumbnail -->
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
