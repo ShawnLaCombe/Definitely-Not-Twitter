@@ -1,0 +1,37 @@
+class RelationshipsController < ApplicationController
+  def create
+    @relationship = current_user.relationships.build(friend_id: params[:friend_id])
+    if @relationship.save
+      flash[:notice] = "You are now following."
+      redirect_to profile_path(current_user.id)
+    else
+      flash[:notice] = "Unable to Follow"
+      redirect_to root_path
+    end
+
+    def destroy
+      @relationship = current_user.relationship.find(params[:id])
+      @relationship.destroy 
+      flash[:notice] = "Your are no longer following"
+      redirect_to  profile_path(current_user.id)
+    end
+
+  end
+
+  private
+
+  def relationship_params
+    params.require(:relationship).permit(:user_id, :friend_id)
+  end
+
+
+
+
+
+
+
+
+
+
+
+end
