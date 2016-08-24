@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+
   # get a specific persons profile
   get 'profiles/:id' => "profiles#show", as: :profile
   get 'profiles' => "profiles#index"
