@@ -9,8 +9,19 @@ class LikesController < ApplicationController
     end
   end
 
-  def set_tweet
-    @tweet = Tweet.find(params[:id])
+  def destroy
+    @tweet.likes.where(user_id: current_user.id).destroy_all
+
+    respond_to do |format|
+      format.html {redirect_to request.referrer}
+    end
   end
+
+  private
+
+  def set_tweet
+    @tweet = Tweet.find(params[:tweet_id])
+  end
+
 
 end
