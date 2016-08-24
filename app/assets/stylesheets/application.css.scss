@@ -17,6 +17,13 @@
  @import 'bootstrap';
  @import 'font-awesome';
 
- jumbotron{
+ .jumbotron{
+  background-color: green;
   color: blue;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  margin-left: -13px;
+  margin-right: -13px;
+  padding:2px;
+  text-align:center;
  }
