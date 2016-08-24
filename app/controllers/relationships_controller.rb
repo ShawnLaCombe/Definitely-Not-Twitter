@@ -8,14 +8,13 @@ class RelationshipsController < ApplicationController
       flash[:notice] = "Unable to Follow"
       redirect_to root_path
     end
+  end
 
-    def destroy
-      @relationship = current_user.relationship.find(params[:id])
-      @relationship.destroy 
-      flash[:notice] = "Your are no longer following"
-      redirect_to  profile_path(current_user.id)
-    end
-
+  def destroy
+    @relationship = current_user.relationships.find(params[:id])
+    @relationship.destroy 
+    flash[:notice] = "Your are no longer following"
+    redirect_to  profile_path(current_user.id)
   end
 
   private
