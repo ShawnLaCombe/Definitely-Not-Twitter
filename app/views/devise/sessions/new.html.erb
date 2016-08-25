@@ -10,12 +10,13 @@
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
-
+  <br>
+  
   <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me, class: "btn btn-sm btn-default" %>
       <%= f.label :remember_me %>
-      <%= f.submit "Log in" %>
+      <%= f.submit "Log in", class: "btn btn-sm btn-success" %>
     </div>
   <% end -%>
 <% end %><br>

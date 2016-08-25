@@ -45,7 +45,7 @@ class TweetsController < ApplicationController
     @tweet.destroy 
 
     respond_to do |format|
-      format.html {redirect_to tweets_url, notice: "Destroyed!"}
+      format.html {redirect_to tweets_url}
     end
   end
 

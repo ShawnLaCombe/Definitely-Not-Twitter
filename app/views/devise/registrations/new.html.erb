@@ -17,7 +17,7 @@
 
   <div class="field form-group">
     <%= f.label :username %>
-    <%= f.text_field :username, placeholder: "@username", class: "form-control"%><br>
+    <%= f.text_field :username, placeholder: "username", class: "form-control"%><br>
   </div>
 
   <div class="field form-group">
@@ -42,10 +42,12 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "re-enter password", class: "form-control"%>
   </div>
+  <br>
 
   <div class="actions">
     <%= f.submit "Sign up", class: "btn btn-sm btn-success" %>
   </div>
+  
 <% end %>
 
 

@@ -4,12 +4,15 @@ Liked by:
   <%= like.user.username %>
 <br>
 <% end %>
-<%= @tweet.likes.count %><br>
+<br>
+<p>This Tweet has: </p>
+<%= @tweet.likes.count %> Like(s)!!
+<br>
 
 
 <% if current_user.likes?(@tweet) %>
-  <%= link_to "Unlike", tweet_likes_path(@tweet), method: :delete, class: "btn btn-sm btn-success" %><br>
-
+  <%= link_to "Unlike", tweet_likes_path(@tweet), method: :delete, class: "btn btn-md btn-success" %>
+  <br>
 <% else %>
   <%= link_to "Like", tweet_likes_path(@tweet), method: :post %>
 <% end %>
