@@ -5,7 +5,7 @@ branches:
 language: ruby
 
 rvm:
-  -2.2.2
+  - 2.2.2
 
 uncomment this line if user rspec instead of minitest:
 script: bundle exec rspec spec
