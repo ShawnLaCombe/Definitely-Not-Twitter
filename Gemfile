@@ -28,6 +28,8 @@ gem 'font-awesome-rails'
 
 gem 'stamp'
 
+gem 'figaro'
+
 
 group :development, :test do
   gem 'sqlite3'
